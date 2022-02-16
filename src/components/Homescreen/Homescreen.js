@@ -7,7 +7,7 @@ const Homescreen = () => {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const isDarkTheme =
-      localStorage.getItem("theme").toString() === "true" ? true : false;
+      localStorage.getItem("theme")?.toString() === "true" ? true : false;
     if (isDarkTheme) {
       document.body.setAttribute("data-theme", "dark");
     } else {

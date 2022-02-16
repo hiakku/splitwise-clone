@@ -7,7 +7,7 @@ const Settings = () => {
   const [isDark, setIsDark] = useState(false);
   useEffect(() => {
     const isDarkTheme =
-      localStorage.getItem("theme").toString() === "true" ? true : false;
+      localStorage.getItem("theme")?.toString() === "true" ? true : false;
     if (isDarkTheme) {
       setIsDark(true);
       document.body.setAttribute("data-theme", "dark");
