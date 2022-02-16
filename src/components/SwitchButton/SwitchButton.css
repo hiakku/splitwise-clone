@@ -1,0 +1,29 @@
+.switchButton[type="checkbox"] {
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  outline: none;
+  border-radius: 20px;
+  border: none;
+  width: 2.75rem;
+  height: 1.5rem;
+  background-color: #c0bfbf;
+}
+.switchButton:checked[type="checkbox"] {
+  background-color: #4c476e;
+}
+.switchButton[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50px;
+  top: 2px;
+  left: 2px;
+  background-color: #ffffff;
+  transition: 0.5s;
+}
+.switchButton:checked[type="checkbox"]:before {
+  left: 50%;
+  background-color: #ffffff;
+}

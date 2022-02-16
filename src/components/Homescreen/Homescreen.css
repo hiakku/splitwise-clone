@@ -1,0 +1,85 @@
+.homeScreenWrapper {
+  width: 100%;
+  max-width: 60rem;
+  padding: 2.2rem 0;
+  margin: 0 auto;
+  display: flex;
+  flex-grow: 1;
+}
+.innerDashboard {
+  width: 100%;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  min-height: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+.innerDashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  border-bottom: 1px solid #ddd;
+  padding: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+.dashboardHeading {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.expenseButton {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ff652f;
+  color: #fff;
+  text-shadow: 0 -1px 0 #c83400;
+  padding: 0.5625rem 0.875rem;
+  font-size: 0.9375rem;
+  border-width: 0.0625rem;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.expenseButton:hover {
+  cursor: pointer;
+  background-color: #ff5216;
+}
+
+.dashboardContent {
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.dashboardContent > img {
+  width: 7.5rem;
+}
+
+.descriptionContent > p,
+.expenseContainer > p {
+  color: var(--font-secondary-color);
+  font-size: 1.125rem;
+}
+.expenseContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.expenseContainer > p {
+  display: flex;
+  flex-direction: column;
+}
+.dashedLine {
+  height: 3rem;
+  position: relative;
+  border-right: 1px solid #ccc;
+  top: 1.5rem;
+}
+.leftDashboard {
+  width: 10%;
+  padding: 2rem;
+}
+.leftDashboard > a {
+  color: var(--primary-color);
+}

@@ -1,0 +1,141 @@
+.modalWrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.modalBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+}
+.modalContent {
+  background: var(--bg-color);
+  max-width: 21.5rem;
+  border: 1px solid var(--font-secondary-color);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 1;
+  width: 100%;
+}
+
+.modalContent > header {
+  background: var(--button-primary-color);
+  color: #fff;
+  padding: 0.4rem 0.625rem;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 1.125rem;
+  font-weight: bold;
+  display: flex;
+  height: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.modalContent > header > span {
+  font-size: 1.75rem;
+  margin-top: -0.1875rem;
+  color: #fff;
+  text-decoration: none;
+}
+.modalContent > footer {
+  letter-spacing: 3px;
+  border-top: 1px solid var(--secondary-color);
+  text-align: right;
+  padding: 0.5rem 0.625rem;
+}
+.cancelButton,
+.saveButton,
+.addButton {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  appearance: none;
+  padding: 0.5625rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: normal;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addButton {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  background: var(--button-primary-color);
+  color: #fff;
+  border-radius: 10px;
+}
+.cancelButton {
+  background: #f6f6f6;
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+.saveButton {
+  background: var(--button-primary-color);
+  color: #fff;
+  margin-left: 0.5rem;
+  text-shadow: 0 -1px 0px #318a71;
+}
+.cancelButton:hover {
+  background: #e9e9e9;
+}
+.saveButton:hover,
+.addButton:hover {
+  background: var(--button-primary-hover-color);
+}
+.modalContent > section {
+  padding: 0.625rem;
+}
+
+.errorMessage {
+  font-weight: 400;
+  font-size: 0.8125rem;
+  letter-spacing: -0.43px;
+  color: #ff808e;
+}
+.dottedInputBox {
+  font-size: 1.25rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  margin-top: 0.0625rem;
+  margin-bottom: 0.1875rem;
+  padding-left: 0.1875rem;
+  padding-right: 0.1875rem;
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+  border-bottom: 1px dashed #ccc;
+  width: 98%;
+}
+.expenseDetailBox {
+  margin-top: 1rem;
+  border-top: 1px dashed #ccc;
+  padding-top: 1rem;
+  height: 10rem;
+}
+.priceInput {
+  display: flex;
+  position: relative;
+  margin-top: 0.5rem;
+}
+.dollar {
+  position: absolute;
+  font-size: 20px;
+  color: #333;
+}
+.priceValue {
+  padding-left: 1rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  height: 1.8rem;
+}
