@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import Modal from "../Modal/Modal";
-import Navbar from "../Navbar/Navbar";
+import ListingTable from "./components/ListingTable/ListingTable";
+import Navbar from "../../components/Navbar/Navbar";
+import AddExpenseModal from "./components/AddExpenseModal/AddExpenseModal";
 import "./Homescreen.css";
 const Homescreen = () => {
   const [expenseData, setExpenseData] = useState([]);
@@ -17,14 +18,10 @@ const Homescreen = () => {
   useEffect(() => {
     const expenseDetails =
       JSON.parse(localStorage.getItem("expenseDetails")) || [];
-    const initialExpenses = {
-      youOwe: 0,
-      youAreOwed: 0,
-    };
     if (expenseDetails.length === 0) {
       localStorage.setItem(
         "expenseDetails",
-        JSON.stringify([...expenseDetails, initialExpenses])
+        JSON.stringify([...expenseDetails])
       );
     }
     if (expenseData.length === 0) {
@@ -63,21 +60,13 @@ const Homescreen = () => {
               <p>Splitwise helps you split bills with friends.</p>
               {expenseData?.length > 0 && (
                 <div className="expenseContainer">
-                  <p>
-                    You owe&nbsp;
-                    <b>${expenseData[0].youOwe}</b>
-                  </p>
-                  <div className="dashedLine" />
-                  <p>
-                    You are owed&nbsp;
-                    <b>${expenseData[0].youAreOwed}</b>
-                  </p>
+                  <ListingTable expensesData={expenseData} />
                 </div>
               )}
             </div>
           </div>
         </div>
-        {isOpen && <Modal handleCloseModal={handleCloseModal} />}
+        {isOpen && <AddExpenseModal handleCloseModal={handleCloseModal} />}
       </div>
     </>
   );

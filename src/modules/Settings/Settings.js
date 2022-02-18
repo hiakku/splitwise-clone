@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import Navbar from "../Navbar/Navbar";
-import SwitchButton from "../SwitchButton/SwitchButton";
+import Navbar from "../../components/Navbar/Navbar";
+import SwitchButton from "../../components/SwitchButton/SwitchButton";
 import "./Settings.css";
 
 const Settings = () => {

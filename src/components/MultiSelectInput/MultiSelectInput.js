@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import "./MultiSelectInput.css";
 const MultiSelectInput = (props) => {
   const {
@@ -10,6 +11,13 @@ const MultiSelectInput = (props) => {
     setEnteredFriendName,
     filteredFriendsData,
   } = props;
+  const handleChange = useCallback(
+    (e) => {
+      handleInputChange(e, setEnteredFriendName);
+      handleSearch(e);
+    },
+    [handleInputChange, handleSearch, setEnteredFriendName]
+  );
   return (
     <>
       <div className="inputSection">
@@ -32,10 +40,7 @@ const MultiSelectInput = (props) => {
               placeholder={
                 (friends.length === 0 && "Enter name/ email address") || ""
               }
-              onChange={(e) => {
-                handleInputChange(e, setEnteredFriendName);
-                handleSearch(e);
-              }}
+              onChange={handleChange}
             />
             <button
               className="addButton"
@@ -49,7 +54,12 @@ const MultiSelectInput = (props) => {
       {enteredFriendName.length > 0 && filteredFriendsData.length > 0 && (
         <ul className="dropDownFriends">
           {filteredFriendsData
-            .filter((friend) => !friends.includes(friend))
+            .filter(
+              (friend) =>
+                !friends
+                  .map((itemVal) => itemVal.toLowerCase())
+                  .includes(friend.toLowerCase())
+            )
             .map((item, index) => (
               <li
                 key={`friendslist${index}`}

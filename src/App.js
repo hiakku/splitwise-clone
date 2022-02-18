@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homescreen from "./components/Homescreen/Homescreen";
-import Settings from "./components/Settings/Settings";
+import Homescreen from "./modules/Homescreen/Homescreen";
+import Settings from "./modules/Settings/Settings";
 
 function App() {
   return (

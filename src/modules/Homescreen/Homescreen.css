@@ -6,6 +6,9 @@
   display: flex;
   flex-grow: 1;
 }
+h1 {
+  color: black;
+}
 .innerDashboard {
   width: 100%;
   border-left: 1px solid #ccc;
@@ -55,6 +58,7 @@
 }
 .dashboardContent > img {
   width: 7.5rem;
+  height: 100%;
 }
 
 .descriptionContent > p,

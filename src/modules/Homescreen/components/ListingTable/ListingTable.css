@@ -1,0 +1,21 @@
+.tableColumnsName {
+  padding-left: 1rem;
+  width: 70%;
+}
+.tableColumnsValue {
+  padding-right: 1rem;
+}
+.rowBottomBorder {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #bbb;
+}
+.tableWrapper {
+  border-spacing: 0;
+  color: black;
+}
+.columnBorderRight {
+  border-right: 1px solid #bbb;
+}
+.innerTable {
+  width: 100%;
+}
