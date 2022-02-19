@@ -11,33 +11,35 @@ const ListingTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {expensesData?.map((item, intialIndex) => (
-          <React.Fragment key={`rows_${intialIndex}`}>
-            <tr>
-              <td className=" rowBottomBorder">{item.description}</td>
-              <td className="rowBottomBorder">
-                {item.friendsAdded.map((expenseValues, index) => (
-                  <table
-                    className="innerTable"
-                    key={`expenses_friends${index}`}
-                  >
-                    <tbody>
-                      <tr>
-                        <td className="tableColumnsName">
-                          <strong>{expenseValues.name}:</strong>
-                        </td>
-                        <td className="tableColumnsValue">
-                          <span>$</span>
-                          {expenseValues.owedAmount}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                ))}
-              </td>
-            </tr>
-          </React.Fragment>
-        ))}
+        {expensesData &&
+          expensesData.length > 0 &&
+          expensesData.map((item, intialIndex) => (
+            <React.Fragment key={`rows_${intialIndex}`}>
+              <tr>
+                <td className=" rowBottomBorder">{item.description}</td>
+                <td className="rowBottomBorder">
+                  {item.friendsAdded.map((expenseValues, index) => (
+                    <table
+                      className="innerTable"
+                      key={`expenses_friends${index}`}
+                    >
+                      <tbody>
+                        <tr>
+                          <td className="tableColumnsName">
+                            <strong>{expenseValues.name}:</strong>
+                          </td>
+                          <td className="tableColumnsValue">
+                            <span>$</span>
+                            {expenseValues.owedAmount}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ))}
+                </td>
+              </tr>
+            </React.Fragment>
+          ))}
       </tbody>
     </table>
   );
