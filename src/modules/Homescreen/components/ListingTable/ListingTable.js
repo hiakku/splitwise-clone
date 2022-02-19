@@ -11,7 +11,7 @@ const ListingTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {expensesData.map((item, intialIndex) => (
+        {expensesData?.map((item, intialIndex) => (
           <React.Fragment key={`rows_${intialIndex}`}>
             <tr>
               <td className=" rowBottomBorder">{item.description}</td>
